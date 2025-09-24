@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Static</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+:root {
+  /* Light mode palette with excellent contrast */
+  --bg: #ffffff;           /* clean white background */
+  --card: #f8fafc;         /* subtle gray card background */
+  --accent: #0891b2;       /* professional teal accent */
+  --muted: #0369a1;        /* professional blue for highlights */
+  --primary: #1a93c0;      /* your custom blue */
+  --secondary: #0d9488;    /* teal for secondary elements */
+  --text-primary: #1e293b;     /* dark gray for primary text */
+  --text-secondary: #475569;   /* medium gray for secondary text */
+  --text-muted: #64748b;       /* light gray for muted text */
+  --border: #e2e8f0;           /* light border color */
+  --shadow: rgba(15, 23, 42, 0.08); /* subtle shadows */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Emphasize section and card titles */
+h2 {
+  font-size: 2rem;
+  letter-spacing: 0.6px;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 0.5rem 0;
+}
+
+/* Color accents for publications and projects */
+#publications .card h3 {
+  color: var(--muted);
+}
+
+#projects .card h3 {
+  color: var(--secondary);
+}
+
+/* Improved paragraph text contrast */
+p {
+  color: var(--text-secondary);
+}
+
+/* Better contrast for lists */
+ul li {
+  color: var(--text-secondary);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.site-header {
+  background: var(--primary);
+  color: white;
+  padding: 18px 0;
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.site-header nav a {
+  color: white;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.site-header nav a:hover {
+  color: #60a5fa;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px; /* Reduced and simplified padding */
+  background: linear-gradient(135deg, rgba(30,64,175,0.05), rgba(8,145,178,0.03));
+  color: var(--text-primary);
+  min-height: 75vh; /* Slightly reduced minimum height */
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-inner h1 {
+  font-size: 2.4rem; /* Better proportioned */
+  margin: 0 0 1.5rem 0; /* Better spacing */
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 4rem; /* Optimized gap */
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.hero-photo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-text {
+  text-align: left;
+  padding-right: 2rem; /* Add some right padding */
+}
+
+.hero-sub {
+  font-size: 1.1rem; /* Increased back for better readability */
+  color: var(--text-secondary);
+  margin: 1rem 0 2rem 0; /* Better top and bottom margins */
+  line-height: 1.5;
+}
+
+.hero-links {
+  display: flex;
+  gap: 1.2rem; /* Optimized gap between buttons */
+  justify-content: flex-start; /* Left align with text */
+  margin-top: 2.5rem; /* Increased margin for better separation */
+  flex-wrap: wrap; /* Allow wrapping for mobile */
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.6rem; /* Slightly reduced for cleaner look */
+  border-radius: 10px; /* Increased border radius for modern look */
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem; /* Reduced font size for cleaner appearance */
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 3px 12px rgba(8, 145, 178, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+}
+
+.btn-outline {
+  background: white;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+}
+
+/* Remove special styling - all hero buttons now use unified color scheme */
+
+.hero-contact {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  gap: 0.75rem;
+  z-index: 9999;
+}
+
+.fixed-contact {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  gap: 0.6rem;
+  z-index: 10000;
+}
+
+.fixed-contact .icon-btn {
+  width: 42px;
+  height: 42px;
+  font-size: 1.05rem;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: white;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.icon-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(8, 145, 178, 0.3);
+}
+
+.contact-icons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-photo {
+  display: block;
+  margin: 0;
+  width: 100%;
+  max-width: 360px;
+  height: 280px; /* Slightly reduced height */
+  object-fit: cover;
+  border-radius: 16px; /* Increased border radius for modern look */
+  border: 2px solid var(--border); /* Thinner border */
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1); /* Softer shadow */
+}
+
+@media (max-width: 920px) {
+  .two-col {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+  .hero-text {
+    text-align: center;
+    margin-top: 0;
+    padding-right: 0;
+  }
+  .hero-photo {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .hero-links {
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    min-width: 140px;
+    font-size: 0.95rem;
+  }
+  .hero {
+    padding: 60px 20px;
+    min-height: 60vh;
+  }
+  .hero-inner h1 {
+    font-size: 2rem;
+  }
+}
+
+.hero h2 {
+  font-size: 2.8rem; /* Increased for better visual hierarchy */
+  margin-bottom: 0.5rem; /* Reduced bottom margin */
+  color: var(--primary);
+  font-weight: 700; /* Slightly bolder */
+}
+
+.hero p {
+  font-size: 1.3rem; /* Reduced from 1.5rem */
+  color: var(--text-secondary);
+}
+
+.card {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px var(--shadow);
+  transition: transform 0.25s, box-shadow 0.25s;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.12);
+  border-color: var(--accent);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: var(--text-primary);
+}
+
+.card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card h3 a:hover {
+  color: var(--accent);
+}
+
+.card ul {
+  padding-left: 20px;
+}
+
+.card ul li {
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+}
+
+/* Skills section improvements */
+#skills {
+  margin: 3rem auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Fixed 2 columns */
+  gap: 2rem; /* Increased gap for better spacing */
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1.5rem;
+  }
+}
+
+.skill-category {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.skill-category:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px var(--shadow);
+  border-color: var(--primary);
+}
+
+.skill-category h3 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.skill-tag {
+  background: white;
+  color: var(--text-primary);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 2px solid var(--border);
+  transition: all 0.3s;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 80px;
+  text-align: center;
+}
+
+.skill-tag:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(26, 147, 192, 0.3);
+}
+
+/* About section improvements */
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.profile-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px var(--shadow);
+}
+
+.about-content p {
+  color: var(--text-secondary);
+  font-size: 1rem; /* Reduced from 1.1rem */
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-image {
+    margin: 0 auto;
+  }
+}
+
+/* Contact section improvements */
+#contact {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  border: 1px solid var(--border);
+  text-align: center;
+  max-width: 1200px;
+}
+
+#contact p {
+  color: var(--text-secondary);
+  font-size: 1rem; /* Reduced from 1.1rem */
+}
+
+#contact a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#contact a:hover {
+  color: var(--primary);
+}
+
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+  color: white;
+  background: var(--primary);
+  margin-top: 3rem;
+}
+
+/* Grid layout for projects */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card button styling */
+.card .btn {
+  margin-top: 1rem;
+  display: inline-block;
+}
+
+/* Section spacing */
+section {
+  margin: 3rem 0;
+}
+
+section:first-child {
+  margin-top: 0;
+}
+    </style>
+  </head>
+  <body>
+    <div class="fixed-contact">
+      <a class="icon-btn" href="https://github.com/tanaygrover" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/tanaygrover/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a class="icon-btn" href="mailto:tanay2312@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <header class="site-header">
+      <div class="container">
+        <h1>Tanay Grover</h1>
+        <nav>
+          <a href="#home">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero container">
+        <div class="hero-inner two-col">
+          <div class="hero-photo-wrap">
+            <img src="assets/hero-photo.jpg" alt="Tanay Grover" class="hero-photo" />
+          </div>
+          <div class="hero-text">
+            <h2>Hey Ya!</h2>
+            <h1>I'm Tanay — I break Machine Learning models, fix them, and sometimes they even thank me with 94% accuracy.</h1>
+            <p class="hero-sub">I'm an Artificial Intelligence Master's graduate from Northeastern University specializing in AI/ML engineering.</p>
+            <div class="hero-links">
+              <a class="btn" href="#projects">See Projects</a>
+              <a class="btn" href="https://www.linkedin.com/in/tanaygrover/" target="_blank">Let's Connect</a>
+              <a class="btn" href="https://drive.google.com/file/d/1_njANydBvo7HuYVG4k0hrmv7Y1zYcuZC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+              <a class="btn" href="#about">Know More About Me</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>CLIP-CONDITIONED DIFFUSION FOR TEXT-TO-POSE GENERATION</h3>
+            <p>Built a CLIP-guided UNet+cross-attention diffusion (cluster-aware sampling, first-action extraction), reducing anatomy loss &gt;1e16 → 0.07 and achieving strong text–pose alignment and anatomical accuracy on HumanML3D.</p>
+            <a href="https://github.com/mjsushanth/CLIP-Conditioned-Diffusion-T2Pose-Generation" class="btn" target="_blank">Explore</a>
+          </article>
+
+          <article class="card">
+            <h3>MULTI-AGENT DEBATE SYSTEMS</h3>
+            <p>Developed a multi-agent framework where multiple LLMs generate opposing arguments, assign scores, and produce summaries. Useful for studying model behavior, automated critique generation, and building debate-driven evaluation tools.</p>
+            <a href="https://github.com/khgaurav/SocrAItic_Circle" class="btn" target="_blank">Explore</a>
+          </article>
+
+          <article class="card">
+            <h3>EMOTION CLASSIFICATION FOR ADAPTIVE MUSIC SYNTHESIS</h3>
+            <p>Built a multimodal emotion classifier using audio and text features from standardized datasets with models like Wave2Vec, Whisper, and Word2Vec. Achieved 94.25% accuracy using a 7-layer CNN and mapped outputs to emotion-tagged music from the DEAM dataset to generate personalized music via valence-arousal mapping.</p>
+            <a href="https://github.com/c-huitt/emotion_music_gen" class="btn" target="_blank">Explore</a>
+          </article>
+
+          <article class="card">
+            <h3>PORTFOLIO MANAGER</h3>
+            <p>Developed a portfolio management system in Java with real-time stock data integration via the Alpha Vantage API, supporting both CLI and GUI interfaces. Implemented features for flexible/inflexible portfolios, moving averages, crossover detection, cost-basis calculation, and historical value analysis.</p>
+            <a href="https://github.com/gracierichards/portfolio_manager" class="btn" target="_blank">Explore</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="publications" class="container">
+        <h2>Publications</h2>
+        <article class="card">
+          <h3>DEEP LEARNING FOR CRIME PATTERN RECOGNITION, IEEE</h3>
+          <p>January 2023 – May 2023</p>
+          <ul>
+            <li>Implemented XGBoost, CatBoost, TabNet, hybrid 1D CNN to predict crime patterns using Chicago, Boston & SF datasets.</li>
+            <li>Achieved accuracy improvements using feature-oriented datasets, with XGBoost for Chicago 96.51% and San Francisco 26.50%.</li>
+            <li>Demonstrated the effectiveness of the Bagging classifier for Boston, achieving the highest accuracy of 20.80%.</li>
+          </ul>
+          <a href="https://ieeexplore.ieee.org/document/10420190" class="btn" target="_blank" rel="noopener noreferrer">Explore</a>
+        </article>
+        <article class="card">
+          <h3>DETECTION OF INTOXICATION IN AUTOMOBILE DRIVERS, IEEE</h3>
+          <p>July 2022 – November 2022</p>
+          <ul>
+            <li>Designed a CNN-based system to detect intoxication through ocular cues, using DL for better accuracy and real-time applicability.</li>
+            <li>Evaluated VGG16, VGG19, MobileNet V2, ResNet50, & LSTM+Attention to identify the most effective model.</li>
+            <li>Achieved highest validation accuracy with VGG16 86.72%.</li>
+          </ul>
+          <a href="https://ieeexplore.ieee.org/document/10085153" class="btn" target="_blank" rel="noopener noreferrer">Explore</a>
+        </article>
+      </section>
+
+      <section id="skills" class="container">
+        <h2>TECHNICAL KNOWLEDGE</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C/C++</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">HTML/CSS</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Frameworks & Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">scikit-learn</span>
+              <span class="skill-tag">HuggingFace</span>
+              <span class="skill-tag">AWS</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>AI/ML Libraries</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PyTorch</span>
+              <span class="skill-tag">TensorFlow</span>
+              <span class="skill-tag">Keras</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">Matplotlib</span>
+              <span class="skill-tag">Plotly</span>
+            </div>
+          </div>
+          
+          <div class="skill-category">
+            <h3>Data & Cloud</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Jupyter</span>
+              <span class="skill-tag">Google Cloud</span>
+              <span class="skill-tag">Google Colab</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">JUnit</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img src="assets/IMG_1111.jpeg" alt="Profile Picture" class="profile-image" />
+          <p>I'm a Master's student in Artificial Intelligence at Northeastern University, passionate about creating meaningful, real-world solutions with AI. I enjoy combining technical expertise with curiosity to tackle complex challenges and bring innovative ideas to life.
+
+Beyond academics, I love working on hands-on projects that push me to learn, experiment, and apply AI in new contexts. This portfolio highlights some of my work across research, coursework, and personal projects.
+
+Thanks for visiting — I'd be glad to connect and collaborate!</p>
+        </div>
+      </section>
+      
+      <section id="contact" class="container">
+        <h2>Contact</h2>
+        <div class="contact-icons">
+          <a class="icon-btn" href="https://github.com/tanaygrover" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a class="icon-btn" href="https://www.linkedin.com/in/tanaygrover/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a class="icon-btn" href="mailto:tanay2312@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>Email: <a href="mailto:tanay2312@gmail.com">tanay2312@gmail.com</a></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">© Tanay Grover</div>
+    </footer>
+  </body>
+</html>
