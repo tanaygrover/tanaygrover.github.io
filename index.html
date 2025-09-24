@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tanay Grover Portfolio</title>
+    <title>Portfolio - Static</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
 :root {
@@ -149,6 +149,8 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-text {
@@ -264,11 +266,12 @@ ul li {
 
 .hero-photo {
   display: block;
-  margin: 0;
+  margin: 0 auto; /* Center the image horizontally */
   width: 100%;
   max-width: 360px;
   height: 280px; /* Slightly reduced height */
   object-fit: cover;
+  object-position: center; /* Center the image content */
   border-radius: 16px; /* Increased border radius for modern look */
   border: 2px solid var(--border); /* Thinner border */
   box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1); /* Softer shadow */
@@ -328,6 +331,9 @@ ul li {
   transition: transform 0.25s, box-shadow 0.25s;
   color: var(--text-secondary);
   border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure all cards have equal height */
 }
 
 .card:hover {
@@ -516,8 +522,11 @@ ul li {
 
 /* Card button styling */
 .card .btn {
-  margin-top: 1rem;
+  margin-top: auto; /* Push button to bottom of card */
   display: inline-block;
+  padding: 0.77rem 1.36rem; /* Reduced by 15% from 0.9rem 1.6rem */
+  font-size: 0.85rem; /* Reduced by 15% from 1rem */
+  align-self: flex-start; /* Align button to left side */
 }
 
 /* Section spacing */
@@ -542,7 +551,7 @@ section:first-child {
         <nav>
           <a href="#home">Home</a>
           <a href="#projects">Projects</a>
-          <a href="#about">About</a>
+          <a href="#about">About Me</a>
           <a href="#contact">Contact</a>
         </nav>
       </div>
@@ -556,7 +565,7 @@ section:first-child {
           </div>
           <div class="hero-text">
             <h2>Hey Ya!</h2>
-            <h1>I'm Tanay — I break Machine Learning models, fix them, and sometimes they even thank me with 94% accuracy.</h1>
+            <h1>I'm Tanay — I break models, fix them, and sometimes they even thank me with 94% accuracy.</h1>
             <p class="hero-sub">I'm an Artificial Intelligence Master's graduate from Northeastern University specializing in AI/ML engineering.</p>
             <div class="hero-links">
               <a class="btn" href="#projects">See Projects</a>
@@ -574,25 +583,25 @@ section:first-child {
           <article class="card">
             <h3>CLIP-CONDITIONED DIFFUSION FOR TEXT-TO-POSE GENERATION</h3>
             <p>Built a CLIP-guided UNet+cross-attention diffusion (cluster-aware sampling, first-action extraction), reducing anatomy loss &gt;1e16 → 0.07 and achieving strong text–pose alignment and anatomical accuracy on HumanML3D.</p>
-            <a href="https://github.com/mjsushanth/CLIP-Conditioned-Diffusion-T2Pose-Generation" class="btn" target="_blank">Explore</a>
+            <a href="https://github.com/tanaygrover/clip-conditioned-diffusion" class="btn" target="_blank">Explore</a>
           </article>
 
           <article class="card">
             <h3>MULTI-AGENT DEBATE SYSTEMS</h3>
             <p>Developed a multi-agent framework where multiple LLMs generate opposing arguments, assign scores, and produce summaries. Useful for studying model behavior, automated critique generation, and building debate-driven evaluation tools.</p>
-            <a href="https://github.com/khgaurav/SocrAItic_Circle" class="btn" target="_blank">Explore</a>
+            <a href="https://github.com/tanaygrover/multi-agent-debate" class="btn" target="_blank">Explore</a>
           </article>
 
           <article class="card">
             <h3>EMOTION CLASSIFICATION FOR ADAPTIVE MUSIC SYNTHESIS</h3>
             <p>Built a multimodal emotion classifier using audio and text features from standardized datasets with models like Wave2Vec, Whisper, and Word2Vec. Achieved 94.25% accuracy using a 7-layer CNN and mapped outputs to emotion-tagged music from the DEAM dataset to generate personalized music via valence-arousal mapping.</p>
-            <a href="https://github.com/c-huitt/emotion_music_gen" class="btn" target="_blank">Explore</a>
+            <a href="https://github.com/tanaygrover" class="btn" target="_blank">Explore</a>
           </article>
 
           <article class="card">
             <h3>PORTFOLIO MANAGER</h3>
             <p>Developed a portfolio management system in Java with real-time stock data integration via the Alpha Vantage API, supporting both CLI and GUI interfaces. Implemented features for flexible/inflexible portfolios, moving averages, crossover detection, cost-basis calculation, and historical value analysis.</p>
-            <a href="https://github.com/gracierichards/portfolio_manager" class="btn" target="_blank">Explore</a>
+            <a href="https://github.com/tanaygrover" class="btn" target="_blank">Explore</a>
           </article>
         </div>
       </section>
