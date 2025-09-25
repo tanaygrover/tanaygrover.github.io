@@ -58,13 +58,17 @@ h2 {
   margin: 0 0 0.5rem 0;
 }
 
-/* Color accents for publications and projects */
+/* Color accents for publications and projects - unified color */
 #publications .card h3 {
-  color: var(--muted);
+  color: var(--text-primary);
 }
 
 #projects .card h3 {
-  color: var(--secondary);
+  color: var(--text-primary);
+}
+
+#experience .card h3 {
+  color: var(--text-primary);
 }
 
 /* Improved paragraph text contrast */
@@ -550,6 +554,7 @@ section:first-child {
         <h1>Tanay Grover</h1>
         <nav>
           <a href="#home">Home</a>
+          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#about">About Me</a>
           <a href="#contact">Contact</a>
@@ -570,11 +575,30 @@ section:first-child {
             <div class="hero-links">
               <a class="btn" href="#projects">See Projects</a>
               <a class="btn" href="https://www.linkedin.com/in/tanaygrover/" target="_blank">Let's Connect</a>
-              <a class="btn" href="https://drive.google.com/file/d/1_njANydBvo7HuYVG4k0hrmv7Y1zYcuZC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+              <a class="btn" href="https://drive.google.com/file/d/1Sv1luur0xrrVUNFMgHvNZg47HbTyMYHp/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
               <a class="btn" href="#about">Know More About Me</a>
             </div>
           </div>
         </div>
+      </section>
+
+      <section id="experience" class="container">
+        <h2>Work Experience</h2>
+        <article class="card">
+          <h3>AI ENGINEER INTERN</h3>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+            <div>
+              <p style="font-weight: 600; color: var(--text-primary); margin: 0;">Claire Adler Luxury PR</p>
+              <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">London, United Kingdom</p>
+            </div>
+            <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem; text-align: right;">September 2025 – Present</p>
+          </div>
+          <ul>
+            <li>Developed an automated system using Python, BeautifulSoup, and NLP to process 280+ articles weekly from 40 publications, creating summary reports and reducing manual research time by 15 hours/week, with CI/CD pipelines ensuring reliable daily deployments.</li>
+            <li>Developed intelligent outreach system using LLM-powered email generation with PostgreSQL database integration, creating personalized journalist campaigns with 85% draft approval rate and automated review workflows using Flask API endpoints.</li>
+            <li>Built trend analysis tool using Google Trends API, RAG, and scikit-learn machine learning algorithms to identify emerging topics and predict PR opportunities, within 7-day window achieving 73% accuracy.</li>
+          </ul>
+        </article>
       </section>
 
       <section id="projects" class="container">
@@ -583,25 +607,25 @@ section:first-child {
           <article class="card">
             <h3>CLIP-CONDITIONED DIFFUSION FOR TEXT-TO-POSE GENERATION</h3>
             <p>Built a CLIP-guided UNet+cross-attention diffusion (cluster-aware sampling, first-action extraction), reducing anatomy loss &gt;1e16 → 0.07 and achieving strong text–pose alignment and anatomical accuracy on HumanML3D.</p>
-            <a href="https://github.com/tanaygrover/clip-conditioned-diffusion" class="btn" target="_blank">Explore</a>
+            <a href="https://github.com/tanaygrover/CLIP-Conditioned-Diffusion-T2Pose-Generation" class="btn" target="_blank">Explore</a>
           </article>
 
           <article class="card">
             <h3>MULTI-AGENT DEBATE SYSTEMS</h3>
             <p>Developed a multi-agent framework where multiple LLMs generate opposing arguments, assign scores, and produce summaries. Useful for studying model behavior, automated critique generation, and building debate-driven evaluation tools.</p>
-            <a href="https://github.com/tanaygrover/multi-agent-debate" class="btn" target="_blank">Explore</a>
+            <a href="https://github.com/tanaygrover/Multi_Agent_LLM_Debater" class="btn" target="_blank">Explore</a>
           </article>
 
           <article class="card">
             <h3>EMOTION CLASSIFICATION FOR ADAPTIVE MUSIC SYNTHESIS</h3>
             <p>Built a multimodal emotion classifier using audio and text features from standardized datasets with models like Wave2Vec, Whisper, and Word2Vec. Achieved 94.25% accuracy using a 7-layer CNN and mapped outputs to emotion-tagged music from the DEAM dataset to generate personalized music via valence-arousal mapping.</p>
-            <a href="https://github.com/tanaygrover" class="btn" target="_blank">Explore</a>
+            <a href="https://github.com/tanaygrover/emotion_music_gen" class="btn" target="_blank">Explore</a>
           </article>
 
           <article class="card">
             <h3>PORTFOLIO MANAGER</h3>
             <p>Developed a portfolio management system in Java with real-time stock data integration via the Alpha Vantage API, supporting both CLI and GUI interfaces. Implemented features for flexible/inflexible portfolios, moving averages, crossover detection, cost-basis calculation, and historical value analysis.</p>
-            <a href="https://github.com/tanaygrover" class="btn" target="_blank">Explore</a>
+            <a href="https://github.com/tanaygrover/portfolio_manager" class="btn" target="_blank">Explore</a>
           </article>
         </div>
       </section>
