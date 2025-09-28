@@ -584,21 +584,39 @@ section:first-child {
 
       <section id="experience" class="container">
         <h2>Work Experience</h2>
-        <article class="card">
-          <h3>AI ENGINEER INTERN</h3>
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
-            <div>
-              <p style="font-weight: 600; color: var(--text-primary); margin: 0;">Claire Adler Luxury PR</p>
-              <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">London, United Kingdom</p>
+        <div class="grid">
+          <article class="card">
+            <h3>AI ENGINEER INTERN</h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div>
+                <p style="font-weight: 600; color: var(--text-primary); margin: 0;">Claire Adler Luxury PR</p>
+                <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">London, United Kingdom</p>
+              </div>
+              <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem; text-align: right;">September 2025 – Present</p>
             </div>
-            <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem; text-align: right;">September 2025 – Present</p>
-          </div>
-          <ul>
-            <li>Developed an automated system using Python, BeautifulSoup, and NLP to process 280+ articles weekly from 40 publications, creating summary reports and reducing manual research time by 15 hours/week, with CI/CD pipelines ensuring reliable daily deployments.</li>
-            <li>Developed intelligent outreach system using LLM-powered email generation with PostgreSQL database integration, creating personalized journalist campaigns with 85% draft approval rate and automated review workflows using Flask API endpoints.</li>
-            <li>Built trend analysis tool using Google Trends API, RAG, and scikit-learn machine learning algorithms to identify emerging topics and predict PR opportunities, within 7-day window achieving 73% accuracy.</li>
-          </ul>
-        </article>
+            <ul>
+              <li>Developed an automated system using Python, BeautifulSoup, and NLP to process 280+ articles weekly from 40 publications, creating summary reports and reducing manual research time by 15 hours/week, with CI/CD pipelines ensuring reliable daily deployments.</li>
+              <li>Developed intelligent outreach system using LLM-powered email generation with PostgreSQL database integration, creating personalized journalist campaigns with 85% draft approval rate and automated review workflows using Flask API endpoints.</li>
+              <li>Built trend analysis tool using Google Trends API, RAG, and scikit-learn machine learning algorithms to identify emerging topics and predict PR opportunities, within 7-day window achieving 73% accuracy.</li>
+            </ul>
+          </article>
+          
+          <article class="card">
+            <h3>AI/ML RESEARCH INTERN</h3>
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem;">
+              <div>
+                <p style="font-weight: 600; color: var(--text-primary); margin: 0;">Command Hospital Western Command (Army)</p>
+                <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem;">DIABETIC RETINOPATHY IMAGE ANALYSIS</p>
+              </div>
+              <p style="color: var(--text-muted); margin: 0; font-size: 0.9rem; text-align: right;">June 2024 – August 2024</p>
+            </div>
+            <ul>
+              <li>Developed preprocessing pipeline using Python, OpenCV, and NumPy on 1,200+ fundus images (CLAHE, denoising, vessel segmentation) to enhance diagnostic features.</li>
+              <li>Trained CNN model in TensorFlow/PyTorch, achieving 82% accuracy and 0.78 F1-score for early-stage retinopathy detection, reducing manual workload.</li>
+              <li>Built automated validation with cross-validation and Grad-CAM explainability, generating heatmaps to support ophthalmologist review.</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
       <section id="projects" class="container">
