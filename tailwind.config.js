@@ -5,8 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        display: ['"Advercase"', 'Georgia', 'serif'],
-        body: ['"Advercase"', 'Georgia', 'serif'],
+        display: ['"Junicode"', 'Georgia', 'serif'],
+        body: ['"Junicode"', 'Georgia', 'serif'],
         mono: ['"JetBrains Mono"', 'monospace'],
       },
       colors: {
