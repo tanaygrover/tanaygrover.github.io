@@ -200,7 +200,7 @@ export const education = [
     school: 'Northeastern University',
     location: 'Boston, MA',
     period: 'Jan 2024 – May 2026',
-    gpa: '3.62 / 4.0',
+    gpa: '3.67 / 4.0',
     highlights: [
       'Specialization in deep learning, large language models, and agentic AI systems.',
       'Coursework: Machine Learning, Deep Learning, Human-Computer Interaction, Foundation of AI, AI Ethics.',
