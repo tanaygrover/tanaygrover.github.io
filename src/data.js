@@ -203,7 +203,7 @@ export const education = [
     gpa: '3.62 / 4.0',
     highlights: [
       'Specialization in deep learning, large language models, and agentic AI systems.',
-      'Coursework: Machine Learning, Natural Language Processing, Computer Vision, Algorithms & Data Structures, AI Ethics.',
+      'Coursework: Machine Learning, Deep Learning, Human-Computer Interaction, Foundation of AI, AI Ethics.',
       'Built production ML systems across LLM pipelines, multimodal diffusion models, and multi-agent RAG frameworks.',
     ],
     logo: '🎓',
