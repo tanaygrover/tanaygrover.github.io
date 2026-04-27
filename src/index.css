@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #fdf8f2;
+    color: #1e0f05;
+  }
+
+  ::selection {
+    background: rgba(139, 94, 46, 0.2);
+    color: #1e0f05;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f9f0e3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #d4a96a88;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-xs tracking-widest text-coffee-200/70 uppercase mb-3;
+  }
+
+  .tag {
+    @apply font-mono text-xs px-2.5 py-1 rounded-md bg-cream-200 text-coffee-300 border border-coffee-100/40;
+  }
+
+  .card-hover {
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                box-shadow 0.35s cubic-bezier(0.22,1,0.36,1),
+                border-color 0.35s ease;
+  }
+
+  .card-hover:hover {
+    border-color: rgba(139, 94, 46, 0.3) !important;
+    box-shadow: 0 12px 40px rgba(74, 40, 16, 0.10), 0 2px 8px rgba(74,40,16,0.06);
+    transform: translateY(-4px);
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+                transform 0.75s cubic-bezier(0.22,1,0.36,1);
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
