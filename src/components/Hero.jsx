@@ -76,7 +76,7 @@ export default function Hero() {
               <div className="absolute -inset-8 rounded-2xl border border-coffee-100/15 -rotate-1" />
               <div className="relative w-72 h-80 sm:w-80 sm:h-96 rounded-2xl overflow-hidden border border-coffee-100/30 shadow-xl shadow-coffee-300/10">
                 <img
-                  src="assets/IMG_1111.jpeg"
+                  src="assets/grad.jpeg"
                   alt="Tanay Grover"
                   className="w-full h-full object-cover"
                   onError={(e) => { e.target.style.display = 'none' }}

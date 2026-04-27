@@ -66,7 +66,7 @@ export default function About() {
               <div className="absolute -inset-3 rounded-2xl border border-coffee-100/20 rotate-2" />
               <div className="w-64 h-72 rounded-2xl overflow-hidden border border-coffee-100/30 shadow-lg">
                 <img
-                  src="assets/hero-photo.jpg"
+                  src="assets/IMG_1111.jpeg"
                   alt="Tanay Grover"
                   className="w-full h-full object-cover"
                   onError={(e) => { e.target.style.display = 'none' }}
