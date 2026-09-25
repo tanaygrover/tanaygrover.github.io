@@ -66,7 +66,9 @@ export default function About() {
               <div className="absolute -inset-3 rounded-2xl border border-coffee-100/20 rotate-2" />
               <div className="w-64 h-72 rounded-2xl overflow-hidden border border-coffee-100/30 shadow-lg">
                 <img
-                  src="assets/IMG_1111.jpeg"
+                  src="assets/IMG_1111-512.jpg"
+                  srcSet="assets/IMG_1111-256.jpg 256w, assets/IMG_1111-384.jpg 384w, assets/IMG_1111-512.jpg 512w, assets/IMG_1111-768.jpg 768w, assets/IMG_1111-1024.jpg 1024w"
+                  sizes="256px"
                   alt="Tanay Grover"
                   className="w-full h-full object-cover"
                   onError={(e) => { e.target.style.display = 'none' }}
